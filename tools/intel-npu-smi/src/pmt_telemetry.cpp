@@ -163,9 +163,6 @@ double PmtTelemetry::getEnergy() const {
     auto frac_part = static_cast<uint32_t>(val & ((1 << 14) - 1));
     double float_part = static_cast<double>(frac_part) / (1 << 14);
     double energy = int_part + float_part;
-    if (cpu_gen_ == CpuGeneration::WCL) {
-        energy *= 100;
-    }
     return energy;
 }
 

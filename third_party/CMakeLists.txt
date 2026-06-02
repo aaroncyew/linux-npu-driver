@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022-2024 Intel Corporation
+# Copyright (C) 2022-2026 Intel Corporation
 #
 # SPDX-License-Identifier: MIT
 #
@@ -14,9 +14,6 @@ if (ENABLE_NPU_PERFETTO_BUILD)
   include(cmake/perfetto.cmake)
 endif()
 
-set(INSTALL_GTEST OFF)
-add_subdirectory(googletest EXCLUDE_FROM_ALL)
+include(cmake/googletest.cmake)
+include(cmake/yaml-cpp.cmake)
 
-set(YAML_CPP_INSTALL OFF)
-set(BUILD_SHARED_LIBS OFF)
-add_subdirectory(yaml-cpp EXCLUDE_FROM_ALL)
